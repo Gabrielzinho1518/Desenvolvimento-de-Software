@@ -1,0 +1,19 @@
+CREATE DATABASE LojaOnline;
+USE LojaOnline;
+
+CREATE TABLE Categorias(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Produtos(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(50) NOT NULL,
+preco DECIMAL(10,2) NOT NULL,
+quantidade INT NOT NULL, 
+categoria_id INT NOT NULL, FOREIGN KEY(categoria_id) REFERENCES Categorias(id)
+);
+
+
+SELECT *FROM Produtos;
+SELECT *FROM Categorias;
